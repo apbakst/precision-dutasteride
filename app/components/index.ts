@@ -1,11 +1,15 @@
 export { Header } from './Header';
 export { Hero } from './Hero';
 export { Stats } from './Stats';
+export { ComparisonChart } from './ComparisonChart';
 export { Science } from './Science';
+export { VideoSection } from './VideoSection';
+export { BeforeAfter } from './BeforeAfter';
 export { HowItWorks } from './HowItWorks';
 export { Testimonials } from './Testimonials';
 export { FAQ } from './FAQ';
 export { Pricing } from './Pricing';
+export { FinalCTA } from './FinalCTA';
 export { Footer } from './Footer';
 export { StickyCTA } from './StickyCTA';
 export { TrackingPixels } from './Tracking';

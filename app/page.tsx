@@ -2,11 +2,14 @@ import {
   Header,
   Hero,
   Stats,
-  Science,
+  ComparisonChart,
+  VideoSection,
+  BeforeAfter,
   HowItWorks,
   Testimonials,
-  FAQ,
   Pricing,
+  FAQ,
+  FinalCTA,
   Footer,
 } from './components';
 import { StickyCTA } from './components/StickyCTA';
@@ -19,11 +22,14 @@ export default function Home() {
       <main>
         <Hero />
         <Stats />
-        <Science />
+        <ComparisonChart />
+        <VideoSection />
+        <BeforeAfter />
         <HowItWorks />
         <Testimonials />
         <Pricing />
         <FAQ />
+        <FinalCTA />
       </main>
 
       <Footer />
