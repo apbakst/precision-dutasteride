@@ -40,16 +40,15 @@ export default function V27Page() {
             Oral DHT blockers can kill your sex drive. Precision Dutasteride doesn't.
           </p>
 
-          <a
-            href="https://anagen.xyz/products/precision-dutasteride"
-            target="_blank"
+          <Link
+            href="/v27/checkout"
             className="group relative inline-block mt-12"
           >
             <div className="absolute -inset-4 bg-emerald-500/30 blur-2xl group-hover:bg-emerald-400/50" />
             <div className="relative bg-emerald-500 px-16 py-6 text-xl tracking-widest text-black group-hover:bg-emerald-400">
               START — $150/MO
             </div>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -102,16 +101,15 @@ export default function V27Page() {
           </div>
 
           <div className="mt-16 text-center">
-            <a
-              href="https://anagen.xyz/products/precision-dutasteride"
-              target="_blank"
+            <Link
+              href="/v27/checkout"
               className="group relative inline-block"
             >
               <div className="absolute -inset-4 bg-emerald-500/30 blur-2xl group-hover:bg-emerald-400/50" />
               <div className="relative bg-emerald-500 px-16 py-6 text-xl tracking-widest text-black group-hover:bg-emerald-400">
                 GET STARTED
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -125,16 +123,15 @@ export default function V27Page() {
           </blockquote>
           <p className="mt-6 text-white/40">— Ryan K., 4 months on treatment</p>
 
-          <a
-            href="https://anagen.xyz/products/precision-dutasteride"
-            target="_blank"
+          <Link
+            href="/v27/checkout"
             className="group relative inline-block mt-12"
           >
             <div className="absolute -inset-3 bg-emerald-500/20 blur-xl group-hover:bg-emerald-400/40" />
             <div className="relative border border-emerald-500/50 bg-black/50 px-12 py-5 text-lg tracking-widest text-white group-hover:bg-emerald-500/10">
               START TREATMENT — $150/MO
             </div>
-          </a>
+          </Link>
         </div>
       </section>
 
