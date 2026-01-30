@@ -23,6 +23,11 @@ const versions = [
   { id: 'v18', name: 'Rotating Stats', desc: 'Auto-cycling metrics, data cards', colors: ['#000', '#10b981', '#06b6d4', '#f59e0b'] },
   { id: 'v19', name: 'Data Dashboard', desc: 'Animated counters, progress bars, grid', colors: ['#050505', '#10b981', '#06b6d4', '#f59e0b'] },
   { id: 'v20', name: 'Full Data Story', desc: 'All metrics: DHT, targeting, timeline', colors: ['#000', '#10b981', '#10b981', '#000'] },
+  { id: 'v21', name: 'CTA Each Section', desc: 'V17 style + CTA after every data point', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v22', name: 'Sticky Bottom CTA', desc: 'Fixed CTA bar always visible at bottom', colors: ['#000', '#10b981', '#10b981', '#000'] },
+  { id: 'v23', name: 'Header + Side CTA', desc: 'CTA in header + progress indicator side', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v24', name: 'Split Layout CTAs', desc: 'Alternating data/CTA split sections', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v25', name: 'Banner + Inline CTAs', desc: 'Top banner + CTA between every section', colors: ['#10b981', '#000', '#10b981', '#000'] },
 ];
 
 export default function Dashboard() {
@@ -31,7 +36,7 @@ export default function Dashboard() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-white">Precision Dutasteride</h1>
-          <p className="mt-2 text-xl text-emerald-400">20 Landing Page Variants</p>
+          <p className="mt-2 text-xl text-emerald-400">25 Landing Page Variants</p>
           <p className="mt-4 text-zinc-400">Click any card to view full page</p>
         </div>
 
