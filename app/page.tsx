@@ -28,6 +28,11 @@ const versions = [
   { id: 'v23', name: 'Header + Side CTA', desc: 'CTA in header + progress indicator side', colors: ['#000', '#10b981', '#000', '#10b981'] },
   { id: 'v24', name: 'Split Layout CTAs', desc: 'Alternating data/CTA split sections', colors: ['#000', '#10b981', '#000', '#10b981'] },
   { id: 'v25', name: 'Banner + Inline CTAs', desc: 'Top banner + CTA between every section', colors: ['#10b981', '#000', '#10b981', '#000'] },
+  { id: 'v26', name: 'Fear vs Relief', desc: 'Side-by-side: oral risks vs Precision safety', colors: ['#ef4444', '#10b981', '#000', '#10b981'] },
+  { id: 'v27', name: 'Hair + Manhood', desc: 'Direct messaging: keep both, no compromise', colors: ['#000', '#10b981', '#ef4444', '#10b981'] },
+  { id: 'v28', name: 'Interactive Toggle', desc: 'Switch between oral risks & Precision benefits', colors: ['#ef4444', '#10b981', '#000', '#10b981'] },
+  { id: 'v29', name: 'Would You Risk?', desc: 'Provocative question, before/after testimonial', colors: ['#ef4444', '#000', '#10b981', '#000'] },
+  { id: 'v30', name: 'The Full Story', desc: 'Fear → relief arc, sticky CTA, emotional journey', colors: ['#000', '#ef4444', '#10b981', '#10b981'] },
 ];
 
 export default function Dashboard() {
@@ -36,7 +41,7 @@ export default function Dashboard() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-white">Precision Dutasteride</h1>
-          <p className="mt-2 text-xl text-emerald-400">25 Landing Page Variants</p>
+          <p className="mt-2 text-xl text-emerald-400">30 Landing Page Variants</p>
           <p className="mt-4 text-zinc-400">Click any card to view full page</p>
         </div>
 
