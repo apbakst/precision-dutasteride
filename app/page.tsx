@@ -8,11 +8,21 @@ const versions = [
   { id: 'v3', name: 'Editorial Warm', desc: 'Cream, serif, social-proof', colors: ['#FAF8F5', '#b45309', '#292524', '#fef3c7'] },
   { id: 'v4', name: 'Dark Immersive', desc: 'Full-bleed images, cinematic', colors: ['#000', '#18181b', '#10b981', '#fff'] },
   { id: 'v5', name: 'Bright Lifestyle', desc: 'White, image grids, green', colors: ['#fff', '#f3f4f6', '#059669', '#1f2937'] },
-  { id: 'v6', name: 'Futuristic Cyber', desc: 'Neon, scanlines, tech', colors: ['#000', '#0f172a', '#06b6d4', '#22d3ee'] },
-  { id: 'v7', name: 'Clinical Science', desc: 'Blue, medical, data-driven', colors: ['#fff', '#eff6ff', '#2563eb', '#1e40af'] },
-  { id: 'v8', name: 'Sexy Confidence', desc: 'Dark, gold, sensual', colors: ['#000', '#18181b', '#f59e0b', '#fbbf24'] },
-  { id: 'v9', name: 'Nature Organic', desc: 'Cream, green, wellness', colors: ['#f5f2ed', '#dcfce7', '#15803d', '#166534'] },
-  { id: 'v10', name: 'Luxury Premium', desc: 'Black, gold, exclusive', colors: ['#0a0a0a', '#1c1917', '#d97706', '#fbbf24'] },
+  { id: 'v6', name: 'Reactive Glow', desc: 'Mouse-follow gradient, centered CTA', colors: ['#000', '#10b981', '#06b6d4', '#000'] },
+  { id: 'v7', name: 'Brutalist', desc: 'Stark white, giant CTA, anti-design', colors: ['#fff', '#fff', '#000', '#000'] },
+  { id: 'v8', name: 'Golden Hour', desc: 'Full-bleed image, glowing amber CTA', colors: ['#000', '#18181b', '#f59e0b', '#fbbf24'] },
+  { id: 'v9', name: 'Type Dominant', desc: 'Giant typography, emerald accent', colors: ['#0a0a0a', '#10b981', '#0a0a0a', '#10b981'] },
+  { id: 'v10', name: 'Parallax Hero', desc: 'Scroll effects, multi-section', colors: ['#000', '#10b981', '#06b6d4', '#f59e0b'] },
+  { id: 'v11', name: 'Image + Reactive', desc: 'V4 imagery + V6 glow + centered CTA', colors: ['#000', '#10b981', '#06b6d4', '#fff'] },
+  { id: 'v12', name: 'Parallax Glow', desc: 'V10 scroll + V6 reactive + V4 images', colors: ['#000', '#10b981', '#0a0a0a', '#10b981'] },
+  { id: 'v13', name: 'Split Cinema', desc: 'Split images + hover glow + giant CTA', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v14', name: 'Fade Reveal', desc: 'Fixed hero fades, content slides over', colors: ['#000', '#10b981', '#06b6d4', '#000'] },
+  { id: 'v15', name: 'Living Gradient', desc: 'Animated conic gradient + parallax text', colors: ['#000', '#10b981', '#06b6d4', '#10b981'] },
+  { id: 'v16', name: 'DHT Graph', desc: 'Animated bar chart, ~0% systemic impact', colors: ['#000', '#10b981', '#ef4444', '#10b981'] },
+  { id: 'v17', name: 'Scroll Data', desc: 'One metric per screen, testimonial', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v18', name: 'Rotating Stats', desc: 'Auto-cycling metrics, data cards', colors: ['#000', '#10b981', '#06b6d4', '#f59e0b'] },
+  { id: 'v19', name: 'Data Dashboard', desc: 'Animated counters, progress bars, grid', colors: ['#050505', '#10b981', '#06b6d4', '#f59e0b'] },
+  { id: 'v20', name: 'Full Data Story', desc: 'All metrics: DHT, targeting, timeline', colors: ['#000', '#10b981', '#10b981', '#000'] },
 ];
 
 export default function Dashboard() {
@@ -21,7 +31,7 @@ export default function Dashboard() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-white">Precision Dutasteride</h1>
-          <p className="mt-2 text-xl text-emerald-400">10 Landing Page Variants</p>
+          <p className="mt-2 text-xl text-emerald-400">20 Landing Page Variants</p>
           <p className="mt-4 text-zinc-400">Click any card to view full page</p>
         </div>
 

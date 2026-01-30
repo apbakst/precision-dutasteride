@@ -1,119 +1,82 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const metadata = { title: 'V8 - Sexy Confidence | Precision Dutasteride' };
-
 export default function V8Page() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
-          <Link href="/v8" className="text-2xl font-light tracking-[0.3em] text-white">ANAGEN</Link>
-          <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="border border-amber-500/50 bg-amber-500/10 px-6 py-2 text-sm tracking-wider text-amber-400 hover:bg-amber-500/20">
-            SHOP
-          </a>
-        </div>
+    <div className="relative min-h-screen bg-black">
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/generated/v4-hero.png"
+          alt=""
+          fill
+          className="object-cover opacity-70"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+      </div>
+
+      {/* Subtle header */}
+      <header className="absolute left-0 right-0 top-0 z-50 flex items-center justify-between px-8 py-6">
+        <Link href="/v8" className="text-sm tracking-[0.4em] text-white/40">ANAGEN</Link>
+        <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
       </header>
 
-      {/* Hero */}
-      <section className="relative min-h-screen">
-        <div className="absolute inset-0">
-          <Image src="/images/generated/v8-hero.png" alt="" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        </div>
+      {/* CENTER EVERYTHING */}
+      <div className="relative z-40 flex min-h-screen flex-col items-center justify-center px-4 text-center">
+        {/* Eyebrow */}
+        <div className="mb-4 text-xs tracking-[0.5em] text-amber-400/80">PRECISION DUTASTERIDE 0.03%</div>
 
-        <div className="relative z-10 flex min-h-screen items-center px-8 lg:px-24">
-          <div className="max-w-xl">
-            <h1 className="text-6xl font-light leading-tight tracking-tight sm:text-7xl">
-              Own Your
-              <span className="block font-normal italic text-amber-400">Confidence.</span>
-            </h1>
-            <p className="mt-8 text-xl font-light text-gray-300">
-              Precision Dutasteride. Because you deserve to feel <em>irresistible</em>.
-            </p>
-            <div className="mt-12">
-              <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="inline-block bg-amber-500 px-12 py-5 text-lg font-medium text-black hover:bg-amber-400">
-                Get Started — $150/mo
-              </a>
-            </div>
-            <div className="mt-12 flex gap-12 border-t border-white/10 pt-8">
-              <div><div className="text-3xl font-light text-amber-400">2-3x</div><div className="text-sm text-gray-500">More Effective</div></div>
-              <div><div className="text-3xl font-light text-amber-400">1000+</div><div className="text-sm text-gray-500">Satisfied Men</div></div>
-              <div><div className="text-3xl font-light text-amber-400">4.5★</div><div className="text-sm text-gray-500">Rating</div></div>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* Headline - huge and faded */}
+        <h1 className="mb-8 text-5xl font-extralight leading-none tracking-tight text-white/90 sm:text-7xl md:text-8xl">
+          Own Your
+          <span className="block font-normal italic text-amber-300">Future</span>
+        </h1>
 
-      {/* Lifestyle */}
-      <section className="bg-zinc-950 px-8 py-24 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 lg:grid-cols-2">
-            <div className="relative aspect-[3/4] overflow-hidden">
-              <Image src="/images/generated/v8-lifestyle.png" alt="" fill className="object-cover" />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h2 className="text-5xl font-light">
-                Feel the
-                <span className="block italic text-amber-400">Difference.</span>
-              </h2>
-              <p className="mt-6 text-lg font-light text-gray-400">
-                When you look good, you feel unstoppable. Precision Dutasteride targets your hair follicles with 2-3x more efficacy than generic topicals.
-              </p>
-              <ul className="mt-8 space-y-4">
-                {['Thicker, fuller hair', 'Lower side effect risk', 'Clinically proven results'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-lg">
-                    <span className="h-px w-8 bg-amber-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* THE CTA - Prominent and centered */}
+        <a
+          href="https://anagen.xyz/products/precision-dutasteride"
+          target="_blank"
+          className="group relative mt-4"
+        >
+          {/* Animated border */}
+          <div className="absolute -inset-1 rounded-sm bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400 opacity-70 blur transition-all group-hover:opacity-100 group-hover:blur-md" />
 
-      {/* Product */}
-      <section className="bg-black px-8 py-24 lg:px-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="relative mx-auto mb-12 h-96 w-64">
-            <Image src="/images/generated/v8-product.png" alt="" fill className="object-contain" />
+          <div className="relative flex items-center gap-6 bg-black px-12 py-6 sm:px-20 sm:py-8">
+            <span className="text-2xl font-light tracking-widest text-white sm:text-4xl">START NOW</span>
+            <span className="text-xl text-amber-400 sm:text-2xl">→</span>
           </div>
-          <h2 className="text-4xl font-light">
-            Precision <span className="italic text-amber-400">Serum</span>
-          </h2>
-          <p className="mt-4 text-gray-400">0.03% Dutasteride • Follicular Targeting Technology</p>
-          <div className="mt-10">
-            <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="inline-block border-2 border-amber-500 px-12 py-4 text-lg tracking-wider text-amber-400 hover:bg-amber-500 hover:text-black">
-              SHOP NOW — FROM $80/MO
-            </a>
-          </div>
-        </div>
-      </section>
+        </a>
 
-      {/* Testimonials */}
-      <section className="bg-zinc-950 px-8 py-24 lg:px-24">
-        <div className="mx-auto max-w-5xl">
+        {/* Price */}
+        <div className="mt-6 text-lg tracking-wider text-white/50">From $80/month</div>
+
+        {/* Trust signals - subtle */}
+        <div className="mt-16 flex gap-8 text-white/30 sm:gap-16">
           <div className="text-center">
-            <div className="flex justify-center gap-1">
-              {[1,2,3,4,5].map(i => <svg key={i} className="h-6 w-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>)}
-            </div>
-            <p className="mt-8 text-2xl font-light italic text-gray-300">
-              "I've never felt more confident. My hair is thicker, and I can see the difference every morning."
-            </p>
-            <p className="mt-6 text-amber-400">— Michael R., 6 months on treatment</p>
+            <div className="text-2xl font-light text-amber-400/60 sm:text-3xl">2-3x</div>
+            <div className="mt-1 text-[10px] tracking-widest">HIGHER DELIVERY</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-light text-amber-400/60 sm:text-3xl">60+</div>
+            <div className="mt-1 text-[10px] tracking-widest">FORMULAS TESTED</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-light text-amber-400/60 sm:text-3xl">6</div>
+            <div className="mt-1 text-[10px] tracking-widest">PATENTS FILED</div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 bg-black px-8 py-12">
-        <div className="mx-auto max-w-7xl text-center text-sm text-gray-600">
-          <p>© 2026 ANAGEN BY HAIRDAO</p>
-          <p className="mt-2">Not FDA-approved. Individual results vary. For men only.</p>
+      {/* Bottom gradient */}
+      <div className="absolute bottom-0 left-0 right-0 z-30">
+        <div className="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+        <div className="py-4 text-center text-[10px] tracking-widest text-white/20">
+          HAIRDAO • UNIVERSITY OF BRASILIA RESEARCH
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

@@ -1,102 +1,87 @@
-import Image from 'next/image';
-import Link from 'next/link';
+'use client';
 
-export const metadata = { title: 'V6 - Futuristic Cyber | Precision Dutasteride' };
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function V6Page() {
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      setMousePos({ x: (e.clientX / window.innerWidth) * 100, y: (e.clientY / window.innerHeight) * 100 });
+    };
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="fixed top-0 z-50 w-full border-b border-cyan-500/20 bg-black/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <Link href="/v6" className="font-mono text-xl font-bold text-cyan-400">ANAGEN_</Link>
-          <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="rounded border border-cyan-500 bg-cyan-500/10 px-5 py-2 font-mono text-sm text-cyan-400 hover:bg-cyan-500/20">
-            INITIALIZE →
-          </a>
-        </div>
+    <div className="relative h-screen w-screen overflow-hidden bg-black">
+      {/* Animated gradient background */}
+      <div
+        className="absolute inset-0 opacity-60 transition-all duration-1000"
+        style={{
+          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #10b981 0%, transparent 50%),
+                       radial-gradient(circle at ${100 - mousePos.x}% ${100 - mousePos.y}%, #06b6d4 0%, transparent 50%),
+                       linear-gradient(180deg, #000 0%, #0a0a0a 100%)`
+        }}
+      />
+
+      {/* Noise texture overlay */}
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+
+      {/* Header - minimal */}
+      <header className="absolute left-0 right-0 top-0 z-50 flex items-center justify-between px-8 py-6">
+        <Link href="/v6" className="text-lg tracking-[0.5em] text-white/50 hover:text-white">ANAGEN</Link>
+        <div className="text-xs tracking-widest text-emerald-400/70">PRECISION DUTASTERIDE</div>
       </header>
 
-      {/* Hero */}
-      <section className="relative min-h-screen">
-        <div className="absolute inset-0">
-          <Image src="/images/generated/v6-hero.png" alt="" fill className="object-cover opacity-70" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent" />
-          <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,255,0.03)_50%)] bg-[length:100%_4px]" />
-        </div>
+      {/* THE CTA - DEAD CENTER */}
+      <div className="absolute inset-0 z-40 flex items-center justify-center">
+        <div className="text-center">
+          <a
+            href="https://anagen.xyz/products/precision-dutasteride"
+            target="_blank"
+            className="group relative inline-block"
+          >
+            {/* Glow effect */}
+            <div className="absolute -inset-4 rounded-full bg-emerald-500/30 blur-2xl transition-all group-hover:bg-emerald-400/50 group-hover:blur-3xl" />
 
-        <div className="relative z-10 flex min-h-screen items-center px-6 lg:px-24">
-          <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 font-mono text-sm text-cyan-400">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
-              SYSTEM ACTIVE
-            </div>
-
-            <h1 className="font-mono text-5xl font-bold leading-tight sm:text-7xl">
-              <span className="text-cyan-400">PRECISION</span>
-              <br />DUTASTERIDE
-            </h1>
-
-            <p className="mt-6 text-xl text-gray-400">
-              Next-generation follicular targeting. <span className="text-cyan-400">2-3x delivery efficiency.</span> Lower systemic exposure.
-            </p>
-
-            <div className="mt-10 grid grid-cols-3 gap-6 border-t border-cyan-500/20 pt-10">
-              <div><div className="font-mono text-3xl text-cyan-400">60+</div><div className="text-sm text-gray-500">Systems Tested</div></div>
-              <div><div className="font-mono text-3xl text-cyan-400">2-3x</div><div className="text-sm text-gray-500">Higher Delivery</div></div>
-              <div><div className="font-mono text-3xl text-cyan-400">4.5★</div><div className="text-sm text-gray-500">User Rating</div></div>
-            </div>
-
-            <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="mt-10 inline-flex items-center gap-2 bg-cyan-500 px-8 py-4 font-mono font-bold text-black hover:bg-cyan-400">
-              START PROTOCOL — $150/MO
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Science */}
-      <section className="border-t border-cyan-500/20 bg-black px-6 py-24 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 font-mono text-sm text-cyan-400">// TECHNOLOGY</div>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div className="relative aspect-video overflow-hidden rounded border border-cyan-500/20">
-              <Image src="/images/generated/v6-science.png" alt="" fill className="object-cover" />
-            </div>
-            <div>
-              <h2 className="text-4xl font-bold">Follicular Targeting <span className="text-cyan-400">System</span></h2>
-              <p className="mt-6 text-gray-400">University of Brasília collaboration. 2 years of R&D. Published in peer-reviewed journals.</p>
-              <div className="mt-8 space-y-4">
-                {['2-3x higher follicular penetration', 'Lower systemic absorption', '60+ delivery systems evaluated', 'Peer-reviewed research'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 font-mono text-sm">
-                    <span className="text-cyan-400">[✓]</span> {item}
-                  </div>
-                ))}
+            {/* Button */}
+            <div className="relative border-2 border-emerald-400 bg-black/50 px-20 py-8 backdrop-blur-sm transition-all group-hover:border-emerald-300 group-hover:bg-emerald-500/20">
+              <div className="text-3xl font-light tracking-[0.3em] text-white sm:text-5xl">
+                START TREATMENT
               </div>
+              <div className="mt-4 text-lg tracking-widest text-emerald-400">$150/MONTH</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product */}
-      <section className="border-t border-cyan-500/20 bg-gradient-to-b from-black to-cyan-950/20 px-6 py-24 lg:px-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="relative mx-auto mb-12 aspect-square max-w-md">
-            <Image src="/images/generated/v6-product.png" alt="" fill className="object-contain" />
-          </div>
-          <h2 className="text-4xl font-bold">Precision <span className="text-cyan-400">0.03%</span></h2>
-          <p className="mt-4 text-gray-400">Engineered for maximum efficacy. Minimum side effects.</p>
-          <a href="https://anagen.xyz/products/precision-dutasteride" target="_blank" className="mt-8 inline-block border border-cyan-500 bg-cyan-500/10 px-10 py-4 font-mono text-cyan-400 hover:bg-cyan-500/20">
-            ACQUIRE — FROM $80/MO
           </a>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-cyan-500/20 bg-black px-6 py-12">
-        <div className="mx-auto max-w-7xl text-center font-mono text-sm text-gray-500">
-          <p>© 2026 ANAGEN BY HAIRDAO</p>
-          <p className="mt-2 text-xs">Not FDA-approved. Individual results vary. Men only.</p>
+          {/* Subtext below CTA */}
+          <p className="mt-12 max-w-md text-sm text-white/40">
+            2-3x higher follicular delivery. Peer-reviewed research. Zero compromises.
+          </p>
         </div>
-      </footer>
+      </div>
+
+      {/* Corner stats */}
+      <div className="absolute bottom-8 left-8 z-30 text-white/30">
+        <div className="text-5xl font-light text-emerald-400/50">2-3x</div>
+        <div className="text-xs tracking-widest">MORE EFFECTIVE</div>
+      </div>
+
+      <div className="absolute bottom-8 right-8 z-30 text-right text-white/30">
+        <div className="text-5xl font-light text-cyan-400/50">60+</div>
+        <div className="text-xs tracking-widest">SYSTEMS TESTED</div>
+      </div>
+
+      {/* Floating text */}
+      <div className="absolute left-1/2 top-1/4 z-20 -translate-x-1/2 text-center">
+        <h1 className="text-[12vw] font-extralight leading-none tracking-tight text-white/5">
+          GROW
+        </h1>
+      </div>
+
+      {/* Footer line */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
     </div>
   );
 }
