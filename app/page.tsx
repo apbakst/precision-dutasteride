@@ -33,6 +33,11 @@ const versions = [
   { id: 'v28', name: 'Interactive Toggle', desc: 'Switch between oral risks & Precision benefits', colors: ['#ef4444', '#10b981', '#000', '#10b981'] },
   { id: 'v29', name: 'Would You Risk?', desc: 'Provocative question, before/after testimonial', colors: ['#ef4444', '#000', '#10b981', '#000'] },
   { id: 'v30', name: 'The Full Story', desc: 'Fear → relief arc, sticky CTA, emotional journey', colors: ['#000', '#ef4444', '#10b981', '#10b981'] },
+  { id: 'v31', name: 'Hair. Sex. Both.', desc: 'Ultra minimal, 3-word headline, big stats', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v32', name: 'Split Screen', desc: 'Red/green split: oral vs precision visual', colors: ['#ef4444', '#10b981', '#000', '#000'] },
+  { id: 'v33', name: '2-3x Hero', desc: 'Giant stat hero, image + data grid', colors: ['#000', '#10b981', '#000', '#10b981'] },
+  { id: 'v34', name: 'Scroll Stats', desc: '15% → ~0% → Hair+Sex scroll journey', colors: ['#ef4444', '#10b981', '#000', '#10b981'] },
+  { id: 'v35', name: 'Single Screen', desc: 'Everything on one viewport, minimal text', colors: ['#000', '#10b981', '#000', '#10b981'] },
 ];
 
 export default function Dashboard() {
@@ -41,7 +46,7 @@ export default function Dashboard() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-white">Precision Dutasteride</h1>
-          <p className="mt-2 text-xl text-emerald-400">30 Landing Page Variants</p>
+          <p className="mt-2 text-xl text-emerald-400">35 Landing Page Variants</p>
           <p className="mt-4 text-zinc-400">Click any card to view full page</p>
         </div>
 
