@@ -7,43 +7,42 @@ const versions = [
   {
     id: 'v1',
     name: 'V1 — Clean Medical',
-    description: 'Minimal, white, high-trust medical aesthetic. Similar to anagen.xyz.',
-    features: [
-      'Clean white background',
-      'Subtle gradients',
-      'Traditional section layout',
-      'Static header',
-    ],
+    description: 'Minimal, white, high-trust medical aesthetic.',
+    features: ['Clean white background', 'Subtle gradients', 'Traditional sections', 'Static header'],
     colors: ['#ffffff', '#f9fafb', '#0071e3', '#10b981'],
-    bestFor: 'Conservative audiences, medical credibility focus',
+    bestFor: 'Conservative audiences, medical credibility',
   },
   {
     id: 'v2',
     name: 'V2 — Bold Visual',
-    description: 'Dark, dynamic, data-forward with video integration and visual charts.',
-    features: [
-      'Dark gradient hero',
-      'Animated elements',
-      'Video integration',
-      'Comparison bar charts',
-      'Before/after gallery',
-    ],
+    description: 'Dark, dynamic with video integration and charts.',
+    features: ['Dark gradient hero', 'Animated elements', 'Video integration', 'Comparison charts'],
     colors: ['#0f172a', '#10b981', '#06b6d4', '#ffffff'],
-    bestFor: 'Younger audiences, tech-savvy users, social ads',
+    bestFor: 'Tech-savvy users, social ads',
   },
   {
     id: 'v3',
     name: 'V3 — Editorial Warm',
-    description: 'Warm, editorial, social-proof heavy with serif typography.',
-    features: [
-      'Warm cream palette',
-      'Serif headlines',
-      'Split-screen hero',
-      'Quote-focused testimonials',
-      'Minimal, elegant design',
-    ],
+    description: 'Warm, editorial with serif typography.',
+    features: ['Warm cream palette', 'Serif headlines', 'Split-screen hero', 'Quote testimonials'],
     colors: ['#FAF8F5', '#b45309', '#292524', '#fef3c7'],
-    bestFor: 'Premium positioning, lifestyle brands, older demographics',
+    bestFor: 'Premium positioning, lifestyle brands',
+  },
+  {
+    id: 'v4',
+    name: 'V4 — Dark Immersive',
+    description: 'Full-screen images, cinematic feel.',
+    features: ['Full-bleed hero image', 'Image-heavy sections', 'Dark theme throughout', 'Stats overlays'],
+    colors: ['#000000', '#18181b', '#10b981', '#ffffff'],
+    bestFor: 'High-impact visual storytelling',
+  },
+  {
+    id: 'v5',
+    name: 'V5 — Bright Lifestyle',
+    description: 'Clean, bright, image-grid focused.',
+    features: ['White background', 'Image grids', 'Green accents', 'Alternating layouts'],
+    colors: ['#ffffff', '#f3f4f6', '#059669', '#1f2937'],
+    bestFor: 'Approachable, lifestyle marketing',
   },
 ];
 
@@ -56,25 +55,26 @@ export default function Dashboard() {
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Landing Page Comparison
+            Precision Dutasteride
           </h1>
-          <p className="mt-4 text-lg text-slate-400">
-            Click on any version to view the full landing page. Compare designs to choose the best one.
+          <p className="mt-2 text-xl text-emerald-400">Landing Page Variants</p>
+          <p className="mt-4 text-slate-400">
+            5 versions to compare. Click any card to view the full page.
           </p>
         </div>
 
         {/* Version cards */}
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {versions.map((version) => (
-            <div
+            <Link
               key={version.id}
-              className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition-all hover:border-slate-700 hover:shadow-2xl"
+              href={`/${version.id}`}
+              className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10"
               onMouseEnter={() => setHoveredVersion(version.id)}
               onMouseLeave={() => setHoveredVersion(null)}
             >
-              {/* Preview area */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-800">
-                {/* Color swatches as preview */}
+              {/* Color preview */}
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <div className="absolute inset-0 flex">
                   {version.colors.map((color, i) => (
                     <div
@@ -84,38 +84,22 @@ export default function Dashboard() {
                     />
                   ))}
                 </div>
-
-                {/* Overlay with version name */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                   <span className="text-2xl font-bold text-white">{version.id.toUpperCase()}</span>
-                </div>
-
-                {/* Hover overlay */}
-                <div
-                  className={`absolute inset-0 flex items-center justify-center bg-black/60 transition-opacity ${
-                    hoveredVersion === version.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <Link
-                    href={`/${version.id}`}
-                    className="rounded-full bg-white px-6 py-3 font-semibold text-slate-900 transition-transform hover:scale-105"
-                  >
-                    View Full Page →
-                  </Link>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-white">{version.name}</h2>
-                <p className="mt-2 text-sm text-slate-400">{version.description}</p>
+              <div className="p-5">
+                <h2 className="text-lg font-semibold text-white">{version.name}</h2>
+                <p className="mt-1 text-sm text-slate-400">{version.description}</p>
 
                 {/* Features */}
                 <ul className="mt-4 space-y-1">
-                  {version.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-500">
-                      <svg className="h-4 w-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  {version.features.slice(0, 3).map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2 text-xs text-slate-500">
+                      <svg className="h-3 w-3 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {feature}
                     </li>
@@ -123,76 +107,42 @@ export default function Dashboard() {
                 </ul>
 
                 {/* Best for */}
-                <div className="mt-6 rounded-lg bg-slate-800 p-3">
-                  <div className="text-xs font-medium uppercase tracking-wider text-slate-500">
-                    Best for
-                  </div>
-                  <div className="mt-1 text-sm text-slate-300">{version.bestFor}</div>
+                <div className="mt-4 rounded-lg bg-slate-800 p-2 text-xs">
+                  <span className="text-slate-500">Best for: </span>
+                  <span className="text-slate-300">{version.bestFor}</span>
                 </div>
-
-                {/* Action */}
-                <Link
-                  href={`/${version.id}`}
-                  className="mt-6 block w-full rounded-lg border border-slate-700 bg-slate-800 py-3 text-center font-medium text-white transition-all hover:border-slate-600 hover:bg-slate-700"
-                >
-                  Preview {version.id.toUpperCase()}
-                </Link>
               </div>
-            </div>
+            </Link>
           ))}
-        </div>
-
-        {/* Quick actions */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/v1"
-            className="rounded-full border border-slate-700 px-6 py-2 text-sm font-medium text-slate-300 transition-all hover:border-slate-500 hover:text-white"
-          >
-            Open V1 in new tab ↗
-          </Link>
-          <Link
-            href="/v2"
-            className="rounded-full border border-slate-700 px-6 py-2 text-sm font-medium text-slate-300 transition-all hover:border-slate-500 hover:text-white"
-          >
-            Open V2 in new tab ↗
-          </Link>
-          <Link
-            href="/v3"
-            className="rounded-full border border-slate-700 px-6 py-2 text-sm font-medium text-slate-300 transition-all hover:border-slate-500 hover:text-white"
-          >
-            Open V3 in new tab ↗
-          </Link>
         </div>
 
         {/* Comparison table */}
         <div className="mt-16 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-800">
-                  <th className="px-6 py-4 text-left text-sm font-medium text-slate-400">Feature</th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-400">V1</th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-400">V2</th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-400">V3</th>
+                  <th className="px-4 py-3 text-left font-medium text-slate-400">Feature</th>
+                  {versions.map((v) => (
+                    <th key={v.id} className="px-4 py-3 text-center font-medium text-slate-400">
+                      {v.id.toUpperCase()}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
                 {[
-                  { feature: 'Hero Style', v1: 'Light split', v2: 'Dark gradient', v3: 'Split testimonial' },
-                  { feature: 'Color Palette', v1: 'White/Blue', v2: 'Dark/Emerald', v3: 'Warm cream' },
-                  { feature: 'Typography', v1: 'Sans-serif', v2: 'Sans-serif bold', v3: 'Serif editorial' },
-                  { feature: 'Video Section', v1: '✗', v2: '✓', v3: '✗' },
-                  { feature: 'Before/After', v1: '✗', v2: '✓', v3: '✗' },
-                  { feature: 'Comparison Chart', v1: '✗', v2: '✓', v3: '✓' },
-                  { feature: 'Animations', v1: 'Minimal', v2: 'Heavy', v3: 'Subtle' },
-                  { feature: 'Social Proof Focus', v1: 'Medium', v2: 'High', v3: 'Very High' },
-                  { feature: 'Sections', v1: '8', v2: '12', v3: '6' },
+                  { feature: 'Theme', values: ['Light', 'Dark', 'Warm', 'Dark', 'Light'] },
+                  { feature: 'Images', values: ['Minimal', 'Medium', 'Low', 'Heavy', 'Heavy'] },
+                  { feature: 'Video', values: ['✗', '✓', '✗', '✗', '✗'] },
+                  { feature: 'Typography', values: ['Sans', 'Sans Bold', 'Serif', 'Sans Bold', 'Sans'] },
+                  { feature: 'Animations', values: ['Minimal', 'Heavy', 'Subtle', 'Medium', 'Subtle'] },
                 ].map((row, i) => (
                   <tr key={i}>
-                    <td className="px-6 py-4 text-sm font-medium text-white">{row.feature}</td>
-                    <td className="px-6 py-4 text-center text-sm text-slate-400">{row.v1}</td>
-                    <td className="px-6 py-4 text-center text-sm text-slate-400">{row.v2}</td>
-                    <td className="px-6 py-4 text-center text-sm text-slate-400">{row.v3}</td>
+                    <td className="px-4 py-3 font-medium text-white">{row.feature}</td>
+                    {row.values.map((val, j) => (
+                      <td key={j} className="px-4 py-3 text-center text-slate-400">{val}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
@@ -200,10 +150,23 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-12 text-center text-sm text-slate-500">
-          Precision Dutasteride Landing Page Variants • Built for A/B testing
+        {/* Quick links */}
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {versions.map((v) => (
+            <Link
+              key={v.id}
+              href={`/${v.id}`}
+              target="_blank"
+              className="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300 transition-all hover:border-emerald-500 hover:text-white"
+            >
+              Open {v.id.toUpperCase()} ↗
+            </Link>
+          ))}
         </div>
+
+        <p className="mt-12 text-center text-sm text-slate-500">
+          Built with Next.js • Images generated with Nano Banana (Gemini)
+        </p>
       </div>
     </div>
   );
